@@ -11,6 +11,7 @@ app.get('/personal', (req, res) => {
   Personal.find()
     .then((result) => {
       console.log(result);
+      res.set('Access-Control-Allow-Origin', '*');
       res.send(result);
     })
     .catch((err) => res.status(404).send(err));
